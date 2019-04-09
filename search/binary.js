@@ -1,29 +1,46 @@
 const { createRandomArray }= require("../helper")
 let data = createRandomArray({sort:true})
 const search=data[parseInt(Math.random()*10)]
-let index=-1
-let [first , last] =[ 0,data.length-1]
-console.log(first , last ,search);
-let i = 0
-while (i < data.length) {
-  let mid = parseInt((first + last) / 2)
-  console.log(mid);
-  if(data[mid]===search){
-    index = i
-  }else if(data[mid] > search){
-    last = mid
+
+
+function binarySearch(data,search) {
+  let index=-1
+  let previousMid=-1
+  let [first , last] =[ 0,data.length-1]
+
+  for (variable of data) {
+    // NOTE:  search value is there in data or not
+    if(search < data[first] || search > data[last] ){
+      break
+    }
+    let mid = parseInt((first + last) / 2)
+    // NOTE:  previousMid and mid matches then break the loop
+    if(previousMid===mid){
+      break
+    }
+
+    if(data[mid]===search){
+      index = mid
+      break
+    }else if(data[mid] > search){
+      last = mid
+    }
+    else if(data[mid] < search){
+      first = mid
+    }
+    previousMid = mid
   }
-  else if(data[mid] < search){
-    first = mid
-  }
-  i++
+  return index
+
 }
 
+const index=binarySearch(data,search)
 
 console.log("\n\n=======");
 console.log("INPUT : ",data);
 console.log("SEARCH : ",search);
 console.log("SEARCH INDEX : ",index);
-console.log("STATUS : ",data[index]===search?"PASS":"FAIL")
+
+console.log("STATUS : ",(data[index]===search || !data.includes(search))?"PASS":"FAIL")
 console.log("The time complexity of above algorithm is O(n).");
 console.log("=======\n\n");
