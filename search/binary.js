@@ -42,5 +42,5 @@ console.log("SEARCH : ",search);
 console.log("SEARCH INDEX : ",index);
 
 console.log("STATUS : ",(data[index]===search || !data.includes(search))?"PASS":"FAIL")
-console.log("The time complexity of above algorithm is O(n).");
+console.log("The time complexity of above algorithm is O(log n). (base 2)");
 console.log("=======\n\n");
