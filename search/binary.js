@@ -1,8 +1,10 @@
 const { createRandomArray }= require("../helper")
 let data = createRandomArray({sort:true})
-const search=data[parseInt(Math.random()*10)]
+// const search=data[parseInt(Math.random()*10)]
 
 
+data= [ 9413, 9426, 9460, 9530, 9628, 9709, 9733, 9785, 9790, 9886 ]
+search= 9886
 function binarySearch(data,search) {
   let index=-1
   let previousMid=-1
@@ -13,6 +15,7 @@ function binarySearch(data,search) {
     if(search < data[first] || search > data[last] ){
       break
     }
+    
     let mid = parseInt((first + last) / 2)
     // NOTE:  previousMid and mid matches then break the loop
     if(previousMid===mid){
@@ -22,11 +25,13 @@ function binarySearch(data,search) {
     if(data[mid]===search){
       index = mid
       break
-    }else if(data[mid] > search){
-      last = mid
     }
-    else if(data[mid] < search){
-      first = mid
+
+    if(data[mid] > search){
+      last = mid - 1
+    }
+    else {
+      first = mid + 1
     }
     previousMid = mid
   }
@@ -34,7 +39,7 @@ function binarySearch(data,search) {
 
 }
 
-const index=binarySearch(data,search)
+const index = binarySearch(data,search)
 
 console.log("\n\n=======");
 console.log("INPUT : ",data);
