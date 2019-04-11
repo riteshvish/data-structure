@@ -1,8 +1,6 @@
 const { createRandomArray } = require('../helper')
 let data = createRandomArray({ sort: true })
 const search = data[parseInt(Math.random() * 10)]
-
-data = [ 236, 4879, 9816, 9824, 9912, 9925, 9962, 10055, 10075, 10130 ]
 function jumpSearch (data, search) {
   let index = -1
   let n = data.length

@@ -8,14 +8,16 @@ function binarySearch (data, search) {
   if (search < data[first] || search > data[last]) {
     return index
   }
-  while (true) { // NOTE:  search value is there in data or not
+  while (true) {
+    // NOTE:  search value is there in data or not
     let mid = parseInt((first + last) / 2)
     // NOTE:  previousMid and mid matches then break the loop
     if (previousMid === mid) {
       break
     }
     if (data[ mid ] === search) {
-      index = mid break
+      index = mid
+      break
     }
     if (data[mid] > search) {
       last = mid - 1
