@@ -1,10 +1,11 @@
 const { createRandomArray } = require('../helper')
 let data = createRandomArray({ sort: true })
 const search = data[parseInt(Math.random() * 10)]
+
 function binarySearch (data, search) {
   let index = -1
   let previousMid = -1
-  let [first, last] = [ 0, data.length - 1]
+  let [first, last] = [0, data.length - 1]
   if (search < data[first] || search > data[last]) {
     return index
   }
@@ -15,7 +16,7 @@ function binarySearch (data, search) {
     if (previousMid === mid) {
       break
     }
-    if (data[ mid ] === search) {
+    if (data[mid] === search) {
       index = mid
       break
     }

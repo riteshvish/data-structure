@@ -5,11 +5,11 @@ let data = createRandomArray({ sort: true, n })
 const search = data[parseInt(Math.random() * n)]
 
 function interpolationSearch (data, search) {
-  let [ first, last] = [ 0, data.length - 1]
+  let [first, last] = [0, data.length - 1]
   while (first <= last && search >= data[first] && search <= data[last]) {
-    let pos = parseInt(first + [ (search - data[first]) * (last - first) / (data[last] - data[first]) ])
+    let pos = parseInt(first + [(search - data[first]) * (last - first) / (data[last] - data[first])])
 
-    if (data[ pos ] === search) {
+    if (data[pos] === search) {
       return pos
     }
 
