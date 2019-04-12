@@ -6,7 +6,6 @@ const search = data[parseInt(Math.random() * n)]
 
 function exponentialSearch (data, search) {
   let [first, last] = [0, data.length - 1]
-  // NOTE: WIP
   if (data[first] === search) {
     return first
   }
