@@ -1,0 +1,32 @@
+
+# dependencies
+node_modules
+
+
+
+# IDEs and editors
+.vscode
+
+
+# System Files
+.DS_Store
+
+
+# Environment
+.env
+
+
+# Testing
+Test
+files
+package-lock.json
+
+
+
+# Folder and Files
+logs
+uploads
+files
+cron/
+cron/*.csv
+refs.txt
