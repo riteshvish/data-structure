@@ -11,7 +11,8 @@ class Node {
 }
 
 class LinkedList {
-  constructor ({double=false}) {
+  constructor (params={}) {
+    const { double = false } = params
     if(double){
       this.previous = null
     }
@@ -69,7 +70,6 @@ function createRandomSingleLinkedList(params={}) {
   return list
 }
 
-createRandomSingleLinkedList()
 module.exports = {
   createRandomArray,
   createRandomSingleLinkedList
